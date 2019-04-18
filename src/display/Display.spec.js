@@ -30,5 +30,13 @@ describe('Display component tests', () => {
 
         getByText(/locked/i);
     });
+
+    it('should have red-led class when locked or closed', () => {
+        const { getByText } = render(<Display locked={true} />);
+
+        const locked = getByText(/locked/i);
+
+        expect(locked).toHaveClass('red-led');
+    });
 });
 // Test away!
