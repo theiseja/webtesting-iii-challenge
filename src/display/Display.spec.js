@@ -3,7 +3,7 @@ import { toHaveClass } from 'jest-dom';
 import { render, fireEvent, cleanup } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
 
-import Display from './display/display';
+import Display from '../display/Display';
 
 expect.extend({ toHaveClass });
 
