@@ -18,5 +18,11 @@ describe('Display component tests', () => {
         getByText(/unlocked/i);
         getByText(/open/i);
     });
+
+    it('should display Closed if closed props is true', () => {
+        const { getByText } = render(<Display closed={true} />);
+
+        getByText(/closed/i);
+    });
 });
 // Test away!
