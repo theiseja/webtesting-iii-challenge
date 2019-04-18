@@ -24,5 +24,11 @@ describe('Display component tests', () => {
 
         getByText(/closed/i);
     });
+
+    it('should display Locked if the locked prop is true', () => {
+        const { getByText } = render(<Display locked={true} />);
+
+        getByText(/locked/i);
+    });
 });
 // Test away!
