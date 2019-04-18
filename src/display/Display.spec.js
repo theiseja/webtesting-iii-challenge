@@ -38,5 +38,13 @@ describe('Display component tests', () => {
 
         expect(locked).toHaveClass('red-led');
     });
+
+    it('should have green-led class when unlocked or open', () => {
+        const { getByText } = render(<Display locked={false} />);
+
+        const locked = getByText(/unlocked/i);
+
+        expect(locked).toHaveClass('green-led');
+    });
 });
 // Test away!
