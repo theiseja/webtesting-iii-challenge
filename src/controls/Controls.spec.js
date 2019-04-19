@@ -14,6 +14,18 @@ describe('Control component tests', () => {
         getByText(/close gate/i);
         getByText(/lock gate/i);
     });
+
+    it('should call toggleClosed to change on button click', () => {
+        const toggleClosed = jest.fn();
+        const { getByText } = render(
+            <Controls toggleClosed={toggleClosed} />
+        );
+
+        const button = getByText(/close gate/i);
+        fireEvent.click(button);
+    });
+
+    
 });
 
 // Test away!
