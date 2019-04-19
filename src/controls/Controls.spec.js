@@ -25,7 +25,21 @@ describe('Control component tests', () => {
         fireEvent.click(button);
     });
 
-    
+    it('should disable open/close button when gate is locked', () => {
+        const { getByText } = render(<Controls locked />);
+
+        const button = getByText(/close gate/i);
+
+        expect(button).toBeDisabled();
+    });
+
+    it('should disable lock/unlock button when gate is open', () => {
+        const { getByText } = render(<Controls closed={false} />);
+
+        const button = getByText(/lock gate/i);
+
+        expect(button).toBeDisabled();
+    });
 });
 
 // Test away!
